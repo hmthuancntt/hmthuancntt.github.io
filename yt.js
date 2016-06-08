@@ -59,8 +59,7 @@ if (location.host == 'www.youtube.com') {
   location = '//s.ytimg.com';
 } else {
   alf = JSON.parse(name);
-  z = [alf.args.adaptive_fmts, alf.args.url_encoded_fmt_stream_map]
-    .join(',').split(',');
+  z = alf.args.url_encoded_fmt_stream_map.join(',').split(',');
   for (frt of z) {
     qst = qry(frt);
     qty = qua['_' + qst.itag] || qst.itag;
@@ -83,9 +82,8 @@ if (location.host == 'www.youtube.com') {
       .replace(/h.264/, 'h264')
       .replace(/[ +./[\]]/g, '-')
       .replace(/-+/g, '-');
-    pm = sprintf('prompt("", "%s"); return false', fn).replace(/"/g, '&quot;');
     qua['_' + qst.itag] =
-      sprintf('<a href="%s" onclick="%s">%s</a>', hrf, pm, qty);
+      sprintf('<a href="%s">%s</a>', hrf, qty);
   }
   dw = document.querySelector('#bm');
   if (!dw) {
