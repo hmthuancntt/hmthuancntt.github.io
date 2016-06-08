@@ -59,7 +59,7 @@ if (location.host == 'www.youtube.com') {
   location = '//s.ytimg.com';
 } else {
   alf = JSON.parse(name);
-  z = alf.args.url_encoded_fmt_stream_map.join(',').split(',');
+  z = alf.args.url_encoded_fmt_stream_map.split(',');
   for (frt of z) {
     qst = qry(frt);
     qty = qua['_' + qst.itag] || qst.itag;
