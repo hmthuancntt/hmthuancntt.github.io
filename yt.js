@@ -59,6 +59,7 @@ if (location.host == 'www.youtube.com') {
   location = '//s.ytimg.com';
 } else {
   alf = JSON.parse(name);
+  console.log(alf);
   z = alf.args.url_encoded_fmt_stream_map.split(',');
   for (frt of z) {
     qst = qry(frt);
