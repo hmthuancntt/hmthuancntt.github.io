@@ -52,7 +52,7 @@ qua = {
   _242: '240p VP9',
   _278: '144p VP9'
 };
-
+var t0 = performance.now();
 if (location.host == 'www.youtube.com') {
   name = JSON.stringify(ytplayer.config);
   alert('run bookmarklet again on next page');
@@ -99,3 +99,5 @@ if (location.host == 'www.youtube.com') {
     Object.keys(qua).map(ky => qua[ky]).filter(vu => /href/.test(vu))
   ).join('<br>');
 }
+var t1 = performance.now();
+	   console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
