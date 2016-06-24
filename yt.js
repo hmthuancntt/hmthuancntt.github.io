@@ -70,7 +70,7 @@ if (location.host == 'www.youtube.com') {
         xhr = new XMLHttpRequest();
         xhr.open('get',alf.assets.js, true);
         xhr.send();
-        rpt = xhr.responseText.match(/\){([^]+)}/)[0];
+        rpt = xhr.responseText.match(/\){([*]+)}/);
         console.log(rpt);
         eval(rpt);
         /* "signature",$r(c) */
