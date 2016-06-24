@@ -68,7 +68,7 @@ if (location.host == 'www.youtube.com') {
     if (qst.s) {
       if (typeof rpt == 'undefined') {
         xhr = new XMLHttpRequest();
-        xhr.open('get', 'http:'+alf.assets.js, 0);
+        xhr.open('get', 'https:'+alf.assets.js, 0);
         xhr.send();
         rpt = xhr.responseText.match(/\){([^]+)}/)[1];
         eval(rpt);
