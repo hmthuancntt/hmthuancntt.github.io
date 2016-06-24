@@ -68,9 +68,10 @@ if (location.host == 'www.youtube.com') {
     if (qst.s) {
       if (typeof rpt == 'undefined') {
         xhr = new XMLHttpRequest();
-        xhr.open('get', 'https:'+ alf.assets.js, true);
+        xhr.open('get',alf.assets.js, true);
         xhr.send();
-        rpt = xhr.responseText.match(/\){([^]+)}/)[1];
+        rpt = xhr.responseText.match(/\){([^]+)}/)[0];
+        console.log(rpt);
         eval(rpt);
         /* "signature",$r(c) */
         fcnm = rpt.match(/"signature",([^(]+)/)[1];
