@@ -269,14 +269,6 @@
             option.text = "Chọn Phân Giải: Thấp";
             select.appendChild(option);
             
-            //File input element
-            var fileinput = document.createElement("input");
-            fileinput.setAttribute("type", "file");
-            fileinput.setAttribute("accept", "image/*");
-            fileinput.id = "fileinput";
-            
-            div.appendChild(fileinput);
-            sltMenu.appendChild(div);
             
             // Menu footer
             sltMenu.innerHTML += '<BR><a href="http://mysite.com/" target="_blank" style="color: #85f9ae; opacity: 2;">mysite</a> | <strong> ' + modVersion + ' </strong> |';
