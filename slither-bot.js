@@ -235,41 +235,14 @@
             select.style.background = "none";
             select.style.border = "none";
             select.style.outline = "none";
+            select.style.width = "100%";
             var option = document.createElement("option");
             option.value = "";
             option.text = "Chơi Với Bạn Bè - Chọn Sever";
             select.appendChild(option);
             div.appendChild(select);
             
-            // Select graph container
-            var div = document.createElement("div");
-            div.style.backgroundColor = "#A5A5A5";
-            div.style.borderRadius = "29px";
-            div.style.margin = "10 auto";
-            div.style.padding = "8px";
-            sltMenu.appendChild(div);
-
-            // Select graph
-            var select = document.createElement("select");
-            select.id = "select-graph";
-            select.style.background = "none";
-            select.style.border = "none";
-            select.style.outline = "none";
-            div.appendChild(select);
-            var option = document.createElement("option");
-            option.value = "3";
-            option.text = "Chọn Phân Giải: Cao";
-            select.appendChild(option);
-            var option = document.createElement("option");
-            option.value = "2";
-            option.text = "Chọn Phân Giải: Trung Bình";
-            select.appendChild(option);
-            var option = document.createElement("option");
-            option.value = "1";
-            option.text = "Chọn Phân Giải: Thấp";
-            select.appendChild(option);
-            
-            
+           
             // Menu footer
             sltMenu.innerHTML += '<BR><a href="http://mysite.com/" target="_blank" style="color: #85f9ae; opacity: 2;">mysite</a> | <strong> ' + modVersion + ' </strong> |';
             sltMenu.innerHTML += '<a href="http://secondsite.com" target="_blank" style="color: #85f9ae; opacity: 2;">demo</a>';
@@ -283,23 +256,6 @@
             connectBtn.onclick = forceConnect;
             // Get servers list
             getServersList();
-            // Set graphic mode
-            var selectGraph = document.getElementById("select-graph");
-            if (renderMode == 1) {
-                selectGraph.selectedIndex = 2;
-            } else if (renderMode == 2) {
-                selectGraph.selectedIndex = 1;
-            } else {
-                selectGraph.selectedIndex = 0;
-                normalMode = true;
-            }
-            selectGraph.onchange = function() {
-                var mode = selectGraph.value;
-                if (mode) {
-                    renderMode = mode;
-                    localStorage.setItem("rendermode", renderMode);
-                }
-            };
             
             resizeView();
         } else {
