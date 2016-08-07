@@ -165,7 +165,7 @@
             input.style.border = "none";
             input.style.outline = "none";
             input.style.width = "100%";
-            input.style.text-align = "center";
+            input.style.textAlign = "center";
             div.appendChild(input);
 
             // Select server
@@ -194,7 +194,7 @@
             button.style.cursor = "pointer";
             button.style.padding = "10px 30px";
             button.style.backgroundColor = rgb(86, 172, 129);
-            button.style.background-image = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAA4CAYAAADXVynvAAABaElEQVQYlX3Gay9CAQDH4f+nOqWUa+7RuRXmNgzDKaV00XHKzIw1M2bGGHOP7/jz9rzyvHqU/W2T/W2jf+L+tHB/WuF0W7jdFnK7AW43QM53gPMdIOfrCOfrCNmfPvanj+wPH/vDR9Z7E+u9iay3Q6y3Q2S+NjBfGyjzUifzUkeZ5xqZ5xqaeaoy81RF048Vph8rKP1QJv1QRun7fdL3+2jqrsTUXQlN3haZvC2iiZsCEzcFNH6dZ/w6j8auPMauPDR6ucPo5Q4a6Wwz0tlGqYstUhdbKHW+Sep8Ew2fbTB8toGGTtcZOl1HgydrDJ6soYHjVQaOV1F/e4X+9grqC5bpC5ZR0l8i6S+hZHORZHMRJRoLJBoLqLc+T299HsWrc8Srcyh+MEv8YBbFKjlilRyKlXPEyjnUU8rSU8qiaNElWnRRdM8huueEEinYRAo2iuQtInkrFMOzMDwLGZ6J4Znh7JoYu6H8AeSP+YEiqrM7AAAAAElFTkSuQmCC)";
+            button.style.backgroundImage = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAA4CAYAAADXVynvAAABaElEQVQYlX3Gay9CAQDH4f+nOqWUa+7RuRXmNgzDKaV00XHKzIw1M2bGGHOP7/jz9rzyvHqU/W2T/W2jf+L+tHB/WuF0W7jdFnK7AW43QM53gPMdIOfrCOfrCNmfPvanj+wPH/vDR9Z7E+u9iay3Q6y3Q2S+NjBfGyjzUifzUkeZ5xqZ5xqaeaoy81RF048Vph8rKP1QJv1QRun7fdL3+2jqrsTUXQlN3haZvC2iiZsCEzcFNH6dZ/w6j8auPMauPDR6ucPo5Q4a6Wwz0tlGqYstUhdbKHW+Sep8Ew2fbTB8toGGTtcZOl1HgydrDJ6soYHjVQaOV1F/e4X+9grqC5bpC5ZR0l8i6S+hZHORZHMRJRoLJBoLqLc+T299HsWrc8Srcyh+MEv8YBbFKjlilRyKlXPEyjnUU8rSU8qiaNElWnRRdM8huueEEinYRAo2iuQtInkrFMOzMDwLGZ6J4Znh7JoYu6H8AeSP+YEiqrM7AAAAAElFTkSuQmCC)";
             div.appendChild(button);
             
            
