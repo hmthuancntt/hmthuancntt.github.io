@@ -127,7 +127,7 @@
             if(document.getElementById("nick").value == "" || document.getElementById("nick").value == null){document.getElementById("nick").value = "karaokeyoutube.net";}
             
             document.getElementById("nick_holder").style.marginTop = "10px";
-            document.getElementById("playh").firstChild.style.marginBottom = "10px";
+            document.getElementById("playh").firstChild.style.visibility = "hidden";
             document.getElementById("login").style.marginTop = "30px";
             document.getElementById("logo").style.marginTop = "0px";
             
@@ -136,12 +136,11 @@
             sltMenu.style.width = "360px";
             sltMenu.style.color = "#8058D0";
             sltMenu.style.backgroundColor = "#1e262e";
-            sltMenu.style.borderRadius = "29px";
             sltMenu.style.fontFamily = "'Arial', sans-serif";
             sltMenu.style.fontSize = "14px";
             sltMenu.style.textAlign = "center";
             sltMenu.style.margin = "0 auto 100px auto";
-            sltMenu.style.padding = "10px 14px";
+            sltMenu.style.padding = "20px 14px";
             sltMenu.innerHTML = "Chọn server";
             login.appendChild(sltMenu);
             
@@ -149,9 +148,8 @@
             var div = document.createElement("div");
             div.style.color = "#8058D0";
             div.style.backgroundColor = "#4C447C";
-            div.style.borderRadius = "29px";
-            div.style.margin = "10 auto";
-            div.style.padding = "8px";
+            div.style.margin = "15px auto";
+            div.style.padding = "10px";
             sltMenu.appendChild(div);
             
             // IP input
@@ -165,37 +163,42 @@
             input.style.color = "#ffffff";
             input.style.border = "none";
             input.style.outline = "none";
+            input.style.width = "100%";
+            input.style.text-align = "center";
             div.appendChild(input);
-            
-            // Connect (play) button
-            var button = document.createElement("input");
-            button.id = "connect-btn";
-            button.type = "button";
-            button.value = "Chơi";
-            button.style.height = "24px";
-            button.style.display = "inline-block";
-            button.style.borderRadius = "12px";
-            button.style.color = "#FFF";
-            button.style.backgroundColor = "#56ac81";
-            button.style.border = "none";
-            button.style.outline = "none";
-            button.style.cursor = "pointer";
-            button.style.padding = "0 20px";
-            div.appendChild(button);
 
             // Select server
             var select = document.createElement("select");
             select.id = "select-srv";
             select.style.width = "100%";
+            select.style.margin = "10px auto";
+            select.style.height = "30px";
             var option = document.createElement("option");
             option.value = "";
             option.text = "Chơi Với Bạn Bè - Chọn Sever";
             select.appendChild(option);
             div.appendChild(select);
             
+             // Connect (play) button
+            var button = document.createElement("input");
+            button.id = "connect-btn";
+            button.type = "button";
+            button.value = "Chơi";
+            button.style.height = "24px";
+            button.style.display = "inline-block";
+            button.style.borderRadius = "30px";
+            button.style.color = "#FFF";
+            button.style.border = "none";
+            button.style.outline = "none";
+            button.style.cursor = "pointer";
+            button.style.padding = "10px 30px";
+            button.style.background-color: rgb(86, 172, 129);
+            button.style.background-image = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAA4CAYAAADXVynvAAABaElEQVQYlX3Gay9CAQDH4f+nOqWUa+7RuRXmNgzDKaV00XHKzIw1M2bGGHOP7/jz9rzyvHqU/W2T/W2jf+L+tHB/WuF0W7jdFnK7AW43QM53gPMdIOfrCOfrCNmfPvanj+wPH/vDR9Z7E+u9iay3Q6y3Q2S+NjBfGyjzUifzUkeZ5xqZ5xqaeaoy81RF048Vph8rKP1QJv1QRun7fdL3+2jqrsTUXQlN3haZvC2iiZsCEzcFNH6dZ/w6j8auPMauPDR6ucPo5Q4a6Wwz0tlGqYstUhdbKHW+Sep8Ew2fbTB8toGGTtcZOl1HgydrDJ6soYHjVQaOV1F/e4X+9grqC5bpC5ZR0l8i6S+hZHORZHMRJRoLJBoLqLc+T299HsWrc8Srcyh+MEv8YBbFKjlilRyKlXPEyjnUU8rSU8qiaNElWnRRdM8huueEEinYRAo2iuQtInkrFMOzMDwLGZ6J4Znh7JoYu6H8AeSP+YEiqrM7AAAAAElFTkSuQmCC)"
+            div.appendChild(button);
+            
            
             // Menu footer
-            sltMenu.innerHTML += '<BR><a href="http://karaokeyoutube.net/" target="_blank" style="color: #85f9ae; opacity: 2;">karaokeyoutube.net</a> |';
+            sltMenu.innerHTML += '<BR><a href="http://karaokeyoutube.net/" target="_blank" style="color: #85f9ae; opacity: 2;">karaokeyoutube.net</a> | ';
             sltMenu.innerHTML += '<a href="http://kythuatphancung.com" target="_blank" style="color: #85f9ae; opacity: 2;">kythuatphancung.com</a>';
             // Get IP input
             inpIP = document.getElementById("server-ip");
