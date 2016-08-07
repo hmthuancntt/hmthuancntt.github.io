@@ -37,58 +37,19 @@
         // Quick resp (ESC)
         w.onkeydown = function(e) {
             switch (e.keyCode) {
-                //case 9: //tab
-                //    e.preventDefault();
-                //    positionHUD.style.display = positionHUD.style.display == "none" ? positionHUD.style.display = null : positionHUD.style.display = "none";
-                //    ipHUD.style.display = ipHUD.style.display == "none" ? ipHUD.style.display = null : ipHUD.style.display = "none";
-                //    fpsHUD.style.display = fpsHUD.style.display == "none" ? fpsHUD.style.display = null : fpsHUD.style.display = "none";
-                //    break;
-                //case 27: //esc
-                //    forceConnect();
-                //    break;
+                case 9: //tab
+                    e.preventDefault();
+                    positionHUD.style.display = positionHUD.style.display == "none" ? positionHUD.style.display = null : positionHUD.style.display = "none";
+                    ipHUD.style.display = ipHUD.style.display == "none" ? ipHUD.style.display = null : ipHUD.style.display = "none";
+                    fpsHUD.style.display = fpsHUD.style.display == "none" ? fpsHUD.style.display = null : fpsHUD.style.display = "none";
+                    break;
+                case 27: //esc
+                    forceConnect();
+                    break;
                 case 81: //q
                     die();
                     break;
-                //case 88: //X
-                //    changeSkin();
-                //    break;
-				case 90: //Z
-					gsc = 0.9;
-                    break;
-				//case 87: //w
-                //    toggleInterval();
-                //    break;
-				//case 70: //f
-				//	if (f === true) {
-				//	console.log("Toggled Off");
-				//	f = false;
-				//	} else {
-				//	f = true;
-				//	console.log("Toggled On");
-				//	}
-				//	foodinterval();
-                //    break;
-				//case 71: //f
-				//	if (colorr >= 7) {
-				//		colorr = 0;
-				//	}
-				//	colorr = colorr + 1;
-                //    break;
-				//case 72: //f
-                //    if (sizee >= 20) {
-				//		sizee = 0;
-				//	}
-				//	sizee = sizee + 2;
-                //    break;
-				//case 74: //f
-                //     if (crazie === true) {
-				//		console.log("u maik me cri");
-				//		crazie = false;
-				//	} else {
-				//		crazie = true;
-				//		console.log("CRAZZIIIEEEE");
-				//	}
-                //    break;
+          
                 case 16: //shift
                     setAcceleration(true);
                     break;
@@ -221,20 +182,10 @@
             button.style.cursor = "pointer";
             button.style.padding = "0 20px";
             div.appendChild(button);
-            
-            // Select server container
-            var div = document.createElement("div");
-            div.style.backgroundColor = "#A5A5A5";
-            div.style.borderRadius = "29px";
-            div.style.margin = "10 auto";
-            div.style.padding = "8px";
-            sltMenu.appendChild(div);
+
             // Select server
             var select = document.createElement("select");
             select.id = "select-srv";
-            select.style.background = "none";
-            select.style.border = "none";
-            select.style.outline = "none";
             select.style.width = "100%";
             var option = document.createElement("option");
             option.value = "";
@@ -244,8 +195,8 @@
             
            
             // Menu footer
-            sltMenu.innerHTML += '<BR><a href="http://mysite.com/" target="_blank" style="color: #85f9ae; opacity: 2;">mysite</a> | <strong> ' + modVersion + ' </strong> |';
-            sltMenu.innerHTML += '<a href="http://secondsite.com" target="_blank" style="color: #85f9ae; opacity: 2;">demo</a>';
+            sltMenu.innerHTML += '<BR><a href="http://karaokeyoutube.net/" target="_blank" style="color: #85f9ae; opacity: 2;">karaokeyoutube.net</a> |';
+            sltMenu.innerHTML += '<a href="http://kythuatphancung.com" target="_blank" style="color: #85f9ae; opacity: 2;">kythuatphancung.com</a>';
             // Get IP input
             inpIP = document.getElementById("server-ip");
             // Get nick
