@@ -192,9 +192,9 @@
             button.style.border = "none";
             button.style.outline = "none";
             button.style.cursor = "pointer";
-            button.style.padding = "0px 30px";
+            button.style.padding = "0px 40px";
             button.style.margin = "15px";
-            button.style.height = "30px";
+            button.style.height = "40px";
             button.style.backgroundColor = "rgb(86, 172, 129)";
             div.appendChild(button);
             
