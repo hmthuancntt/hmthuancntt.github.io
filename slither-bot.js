@@ -1,6 +1,6 @@
 ﻿(function(w) {
     var modVersion = "v1.0",
-        renderMode = 2, // 3 - normal, 2 - optimized, 1 - simple (mobile)
+        renderMode = 3, // 3 - normal, 2 - optimized, 1 - simple (mobile)
         normalMode = false,
         gameFPS = null,
         positionHUD = null,
@@ -22,19 +22,12 @@
         nextSkin = 0;
     function init() {
         // Append DIVs
-        appendDiv("position-hud", "nsi", styleHUD + "right: 30; bottom: 120px;");
-        appendDiv("ip-hud", "nsi", styleHUD + "right: 30; bottom: 150px;");
-        appendDiv("fps-hud", "nsi", styleHUD + "right: 30; bottom: 170px;");
+        appendDiv("position-hud", "nsi", styleHUD + "right: 30px; bottom: 120px;");
+        appendDiv("ip-hud", "nsi", styleHUD + "right: 30px; bottom: 150px;");
+        appendDiv("fps-hud", "nsi", styleHUD + "right: 30px; bottom: 170px;");
         positionHUD = document.getElementById("position-hud");
         ipHUD = document.getElementById("ip-hud");
         fpsHUD = document.getElementById("fps-hud");
-        //// Add zoom
-        //if (/firefox/i.test(navigator.userAgent)) {
-        //    document.addEventListener("DOMMouseScroll", zoom, false);
-        //} else {
-        //    document.body.onmousewheel = zoom;
-        //}
-        // Quick resp (ESC)
         w.onkeydown = function(e) {
             switch (e.keyCode) {
                 case 9: //tab
@@ -64,15 +57,10 @@
             }
         }
 
-        // Set menu
         setMenu();
-        // Set leaderboard
         setLeaderboard();
-        // Set graphics
         setGraphics();
-        // Update loop
         updateLoop();
-        // Show FPS
         showFPS();
     }
     // Append DIV
@@ -106,18 +94,12 @@
 			w.setSkin(w.snake, skin);
 		}
 	}
-	// Rotate skin
-    // Get console log
     function getConsoleLog(log) {
-        //w.console.logOld(log);
         if (log.indexOf("FPS") != -1) {
             gameFPS = log;
         }
     }
 	
-	//$("iframe").attr('src', 'http://lythien.top/social.html');
-	
-    // Set menu
     function setMenu() {
         var login = document.getElementById("login");
         if (login) {
@@ -263,10 +245,12 @@
     }
     // Get servers list
     function getServersList() {
-        if (w.sos && w.sos.length > 0) {
+    	var serverlist = w.sos;
+    	serverlist.dynamicSort("ip");
+        if (serverlist && serverlist.length > 0) {
             var selectSrv = document.getElementById("select-srv");
-            for (var i = 0; i < sos.length; i++) {
-                var srv = sos[i];
+            for (var i = 0; i < serverlist.length; i++) {
+                var srv = serverlist[i];
                 var option = document.createElement("option");
                 option.value = srv.ip + ":" + srv.po;
                 option.text = (i + 1) + ". " + option.value;
@@ -280,6 +264,19 @@
             setTimeout(getServersList, 100);
         }
     }
+    
+    function dynamicSort(property) {
+	var sortOrder = 1;
+	if(property[0] === "-") {
+		sortOrder = -1;
+		property = property.substr(1);
+	}
+	return function (a,b) {
+		var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+		return result * sortOrder;
+	}
+    }
+
     // Resize view
     function resizeView() {
         if (w.resize) {
