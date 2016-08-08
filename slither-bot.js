@@ -246,7 +246,7 @@
     // Get servers list
     function getServersList() {
     	var serverlist = w.sos;
-    	serverlist.dynamicSort("ip");
+    	 serverlist.sort(sort_by('ip', true, function (a) { return a }));
         if (serverlist && serverlist.length > 0) {
             var selectSrv = document.getElementById("select-srv");
             for (var i = 0; i < serverlist.length; i++) {
@@ -265,16 +265,17 @@
         }
     }
     
-    function dynamicSort(property) {
-	var sortOrder = 1;
-	if(property[0] === "-") {
-		sortOrder = -1;
-		property = property.substr(1);
-	}
-	return function (a,b) {
-		var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-		return result * sortOrder;
-	}
+   var sort_by = function (field, reverse, primer) {
+
+        var key = primer ?
+            function (x) { return primer(x[field]) } :
+            function (x) { return x[field] };
+
+        reverse = !reverse ? 1 : -1;
+
+        return function (a, b) {
+            return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+        }
     }
 
     // Resize view
