@@ -231,7 +231,10 @@
     // Force connect
     function forceConnect() {
         if (inpIP.value.length == 0 || !w.connect) {
-            return;
+            	var select = document.getElementById('select-srv');
+		var items = select.getElementsByTagName('option');
+		var index = Math.floor(Math.random() * items.length);
+		select.selectedIndex = index;
         }
         w.forcing = true;
         if (!w.bso) {
