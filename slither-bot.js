@@ -111,7 +111,7 @@
             document.getElementById("nick_holder").style.marginTop = "10px";
             var element = document.getElementById("playh");
             //element.parentNode.removeChild(element);
-            element.style.display = "none";
+            //element.style.display = "none";
             document.getElementById("login").style.marginTop = "30px";
             document.getElementById("logo").style.marginTop = "0px";
             
