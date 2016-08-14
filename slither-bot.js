@@ -234,17 +234,30 @@
             	var select = document.getElementById('select-srv');
 		var items = select.getElementsByTagName('option');
 		var index = Math.floor(Math.random() * items.length);
-		select.selectedIndex = index;
+		var strIp = select.options[index].value;
+		
+		 w.forcing = true;
+	        if (!w.bso) {
+	            w.bso = {};
+	        }
+	        var srv = strIp.trim().split(":");
+	        w.bso.ip = srv[0];
+	        w.bso.po = srv[1];
+	        w.connect();
+	        setTimeout(connectionStatus, 1000);
         }
-        w.forcing = true;
-        if (!w.bso) {
-            w.bso = {};
+        else
+        {
+	        w.forcing = true;
+	        if (!w.bso) {
+	            w.bso = {};
+	        }
+	        var srv = inpIP.value.trim().split(":");
+	        w.bso.ip = srv[0];
+	        w.bso.po = srv[1];
+	        w.connect();
+	        setTimeout(connectionStatus, 1000);
         }
-        var srv = inpIP.value.trim().split(":");
-        w.bso.ip = srv[0];
-        w.bso.po = srv[1];
-        w.connect();
-        setTimeout(connectionStatus, 1000);
     }
     // Get servers list
     function getServersList() {
