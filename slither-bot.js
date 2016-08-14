@@ -183,7 +183,7 @@
            
             // Menu footer
             sltMenu.innerHTML += '<BR><a href="http://karaokeyoutube.net/" target="_blank" style="color: #85f9ae; opacity: 2;">karaokeyoutube.net</a> | ';
-            sltMenu.innerHTML += '<a href="http://kythuatphancung.com" target="_blank" style="color: #85f9ae; opacity: 2;">kythuatphancung.com</a>';
+            sltMenu.innerHTML += '<a href="http://kythuatphancung.net" target="_blank" style="color: #85f9ae; opacity: 2;">kythuatphancung.net</a>';
             // Get IP input
             inpIP = document.getElementById("server-ip");
             // Get nick
