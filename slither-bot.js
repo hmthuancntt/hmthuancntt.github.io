@@ -231,7 +231,7 @@
     // Force connect
     function forceConnect() {
         if (inpIP.value.length == 0 || !w.connect) {
-            return;
+            w.connect();
         }
         w.forcing = true;
         if (!w.bso) {
