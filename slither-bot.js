@@ -110,7 +110,8 @@
             
             document.getElementById("nick_holder").style.marginTop = "10px";
             var element = document.getElementById("playh");
-            element.parentNode.removeChild(element);
+            //element.parentNode.removeChild(element);
+            element.style.display = "none";
             document.getElementById("login").style.marginTop = "30px";
             document.getElementById("logo").style.marginTop = "0px";
             
@@ -231,7 +232,7 @@
     // Force connect
     function forceConnect() {
         if (inpIP.value.length == 0 || !w.connect) {
-            w.connect();
+            return;
         }
         w.forcing = true;
         if (!w.bso) {
