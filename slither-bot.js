@@ -265,12 +265,15 @@
     	 serverlist.sort(sort_by('ip', true, function (a) { return a }));
         if (serverlist && serverlist.length > 0) {
             var selectSrv = document.getElementById("select-srv");
-            for (var i = 0; i < serverlist.length; i++) {
+	    var j = 1;
+            for (var i = 0; i < serverlist.length; i++) {		
                 var srv = serverlist[i];
+	    	if(!srv.ip.startsWith("43")) continue;
                 var option = document.createElement("option");
                 option.value = srv.ip + ":" + srv.po;
-                option.text = (i + 1) + ". " + option.value;
+                option.text = (j) + ". " + option.value;
                 selectSrv.appendChild(option);
+		j++;
             }
             selectSrv.onchange = function() {
                 var srv = selectSrv.value;
